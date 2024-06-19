@@ -1,0 +1,15 @@
+clc;
+clear all;
+xn = input("Enter x[n] : ");
+hn = input("Enter h[n] : ");
+L = length(xn);
+xDFT = fft(xn,-1);
+hDFT = fft(hn,-1);
+disp(xDFT, "DFT of x[n] = ");
+disp(hDFT, "DFT of h[n] = ");
+yDFT = xDFT.*hDFT;
+disp(yDFT, "DFT of y[n] = ");
+Answer = abs(fft(yDFT,-1));
+disp(Answer,"Circular Convolution = ");
+IDFT = Answer/L;
+disp(IDFT, "IDFT = ");

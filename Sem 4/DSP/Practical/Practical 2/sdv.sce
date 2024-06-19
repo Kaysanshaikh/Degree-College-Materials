@@ -1,0 +1,15 @@
+clc;
+clf;
+clear all;
+x = input('enter x seq');
+m = length(x);
+subplot(3,1,1);
+plot2d3(x);
+h = input('enter h seq');
+n = length(h);
+subplot(3,1,2);
+plot2d3(h);
+z=convol(x,h);
+disp(z);
+subplot(3,1,3);
+plot2d3(z);
